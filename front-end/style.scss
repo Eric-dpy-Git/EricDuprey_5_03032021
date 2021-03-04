@@ -3,52 +3,43 @@
   src: url(/front-end/Fonts/fh_faith.otf);
 }
 
+$primaire: #f8ecf4;
+$secodaire: rgb(207, 191, 191);
+
 .header__style,
 .footer__style {
   width: 100%;
   height: 200px;
 }
-
 .header__display,
 .footer__display {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .header__color,
 .footer__color {
-  background-color: #cfbfbf;
+  background-color: $secodaire;
 }
-
 .logo__box-style {
   width: 250px;
   height: 80px;
   margin: auto 30px;
 }
-
 .logo__box-display {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  background-color: #f8ecf4;
+  background-color: $primaire;
 }
-
 .logo__image-style {
   width: 50px;
   height: 45px;
   margin: auto 0;
 }
-
 .logo {
   margin: 15px;
 }
-
 .brand__font {
   font-family: fh_faith;
   font-size: 35px;
 }
-
 .brand__font-style {
   margin: auto;
 }
@@ -59,14 +50,13 @@
 }
 
 /* --------section part-------- */
+
 /* --------article part --------- */
 .article__style {
   width: 250px;
   height: 350px;
   margin: 25px;
 }
-
 .article__color {
-  background-color: #f8ecf4;
+  background-color: $primaire;
 }
-/*# sourceMappingURL=style.css.map */
