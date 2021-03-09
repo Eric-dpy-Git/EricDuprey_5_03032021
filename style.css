@@ -1,6 +1,6 @@
 @font-face {
   font-family: fh_faith;
-  src: url(front-end/Fonts/fh_faith.otf);
+  src: url(/front-end/Fonts/fh_faith.otf);
 }
 
 .header__style,
@@ -60,13 +60,30 @@
 
 /* --------section part-------- */
 /* --------article part --------- */
+.aside__style,
 .article__style {
   width: 250px;
   height: 350px;
   margin: 25px;
 }
 
+.aside__color,
 .article__color {
   background-color: #f8ecf4;
+}
+
+.hidden__class {
+  width: 0;
+  height: 0;
+}
+
+.aside__div-display {
+  text-align: center;
+}
+
+.asideDivBtn__style {
+  width: 200px;
+  height: 50px;
+  margin: 200px auto;
 }
 /*# sourceMappingURL=style.css.map */
