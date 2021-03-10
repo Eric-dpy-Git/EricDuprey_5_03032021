@@ -60,16 +60,29 @@
 
 /* --------section part-------- */
 /* --------article part --------- */
-.aside__style,
+.aside__style {
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
+}
+
 .article__style {
   width: 250px;
   height: 350px;
   margin: 25px;
 }
 
-.aside__color,
+.aside__color {
+  background-color: #f8ecf4;
+  opacity: 0.7;
+}
+
 .article__color {
   background-color: #f8ecf4;
+}
+
+.aside__div-display {
+  text-align: center;
 }
 
 .hidden__class {
@@ -77,13 +90,18 @@
   height: 0;
 }
 
-.aside__div-display {
-  text-align: center;
-}
-
 .asideDivBtn__style {
   width: 200px;
   height: 50px;
-  margin: 200px auto;
+  margin: 0 auto;
+}
+
+.main__color {
+  background-image: url(background__img.jpg);
+  background-repeat: round;
+}
+
+.section__aside {
+  margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */
