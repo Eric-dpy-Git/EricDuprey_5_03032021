@@ -5,7 +5,7 @@
 
 .header__style,
 .footer__style {
-  width: 100%;
+  min-width: 320px;
   height: 200px;
 }
 
@@ -19,6 +19,11 @@
 .header__color,
 .footer__color {
   background-color: #cfbfbf;
+}
+
+.fa-arrow-circle-left {
+  font-size: 20px;
+  margin: 10px;
 }
 
 .logo__box-style {
@@ -53,23 +58,35 @@
   margin: auto;
 }
 
+/* -----header & footer -------- */
 /* ------- main part --------- */
 .main__style {
-  width: 100%;
+  min-width: 320px;
+}
+
+.main__color {
+  background-image: url(front-end/images/background__img.jpg);
+  background-repeat: round;
+  min-width: 320px;
+  min-height: 400px;
 }
 
 /* --------section part-------- */
-/* --------article part --------- */
-.aside__style {
-  width: 80%;
-  height: 500px;
+.section__style {
+  min-width: 320px;
+}
+
+.section__aside {
+  min-width: 320px;
   margin: 0 auto;
 }
 
-.article__style {
-  width: 250px;
-  height: 350px;
-  margin: 25px;
+/* --------aside part --------- */
+.aside__div-display {
+  text-align: center;
+  min-width: 250px;
+  margin: 0 auto;
+  padding: 100px 0;
 }
 
 .aside__color {
@@ -77,31 +94,89 @@
   opacity: 0.7;
 }
 
-.article__color {
-  background-color: #f8ecf4;
+.aside__style {
+  max-width: 1024px;
+  height: 600px;
+  margin: 0 auto;
 }
 
-.aside__div-display {
+/* --------aside part --------- */
+/* --------article part --------- */
+.article__style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-width: 250px;
+  max-width: 1024px;
+  margin: 25px auto;
+}
+
+.article__color {
+  background-color: rgba(248, 236, 244, 0.7);
+}
+
+.img__box {
+  margin: auto;
+}
+
+figure {
   text-align: center;
 }
 
+.img__style {
+  margin: 0 auto;
+  border-radius: 15px;
+  -webkit-box-shadow: lightgrey 10px 10px 10px;
+          box-shadow: lightgrey 10px 10px 10px;
+}
+
+/* --------article card---------- */
+.article__card {
+  text-align: center;
+  background-color: white;
+  min-width: 300px;
+  max-width: 500px;
+  height: 200px;
+  margin: auto;
+  border-radius: 15px;
+  -webkit-box-shadow: lightgrey 10px 10px 10px;
+          box-shadow: lightgrey 10px 10px 10px;
+}
+
+.btn__article {
+  background-color: #cfbfbf;
+  border-radius: 40px;
+}
+
+/* --------article card---------- */
+/* --------article part --------- */
 .hidden__class {
   width: 0;
   height: 0;
+  visibility: hidden;
+}
+
+/* -------text & button------- */
+.welcome__text {
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  font-size: 26px;
 }
 
 .asideDivBtn__style {
   width: 200px;
   height: 50px;
   margin: 0 auto;
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 900;
 }
 
-.main__color {
-  background-image: url(background__img.jpg);
-  background-repeat: round;
-}
-
-.section__aside {
-  margin: 0 auto;
+.asideDivBtn__color {
+  background-color: #cfbfbf;
+  border-radius: 40px;
+  margin-top: 60px;
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */
