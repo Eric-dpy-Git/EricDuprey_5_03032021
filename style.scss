@@ -57,6 +57,9 @@ $tertiaire: purple;
 }
 /* -----header & footer -------- */
 /* ------- main part --------- */
+#main__page-wrapper {
+  min-width: 320px;
+}
 .main__style {
   min-width: 320px;
 }
@@ -66,12 +69,10 @@ $tertiaire: purple;
   min-width: 320px;
   min-height: 800px;
 }
-.test {
-  height: 100px;
-}
+
 /* --------section part-------- */
 .section__style {
-  margin-top: 150px;
+  margin-top: 50px;
   min-width: 320px;
 }
 .section__aside {
@@ -91,10 +92,9 @@ $tertiaire: purple;
 }
 .aside__style {
   max-width: 1024px;
-  /* height: 600px; */
   margin: 0 auto;
-  /* display: flex;
-  flex-direction: column; */
+  border-radius: 0 0 15px 15px;
+  box-shadow: 10px 10px 10px lightgrey;
 }
 .fa-arrow-right {
   padding: 20px;
@@ -109,6 +109,8 @@ $tertiaire: purple;
   min-width: 250px;
   max-width: 1024px;
   margin: 25px auto;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px lightgrey;
 }
 .article__color {
   background-color: rgba(248, 236, 244, 0.7);
@@ -145,17 +147,18 @@ figure {
 }
 /* --------article card---------- */
 /* --------article part --------- */
-
+//class for hide product list
 .hidden__class {
   width: 0;
   height: 0;
-  visibility: hidden;
+  display: none;
 }
 
 /* -------text & button------- */
 .welcome__text {
   font-family: Avenir, Arial, Helvetica, sans-serif;
   font-size: 26px;
+  padding: 30px;
 }
 .asideDivBtn__style {
   width: 200px;
@@ -168,8 +171,6 @@ figure {
 .asideDivBtn__color {
   background-color: $secondaire;
   border-radius: 40px;
-  /* margin-top: 60px;
-  position: relative; */
 }
 .asideDivBtn__style:focus {
   outline: none;

@@ -67,6 +67,10 @@
 
 /* -----header & footer -------- */
 /* ------- main part --------- */
+#main__page-wrapper {
+  min-width: 320px;
+}
+
 .main__style {
   min-width: 320px;
 }
@@ -78,13 +82,9 @@
   min-height: 800px;
 }
 
-.test {
-  height: 100px;
-}
-
 /* --------section part-------- */
 .section__style {
-  margin-top: 150px;
+  margin-top: 50px;
   min-width: 320px;
 }
 
@@ -108,10 +108,10 @@
 
 .aside__style {
   max-width: 1024px;
-  /* height: 600px; */
   margin: 0 auto;
-  /* display: flex;
-  flex-direction: column; */
+  border-radius: 0 0 15px 15px;
+  -webkit-box-shadow: 10px 10px 10px lightgrey;
+          box-shadow: 10px 10px 10px lightgrey;
 }
 
 .fa-arrow-right {
@@ -129,6 +129,9 @@
   min-width: 250px;
   max-width: 1024px;
   margin: 25px auto;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 10px lightgrey;
+          box-shadow: 10px 10px 10px lightgrey;
 }
 
 .article__color {
@@ -178,13 +181,14 @@ figure {
 .hidden__class {
   width: 0;
   height: 0;
-  visibility: hidden;
+  display: none;
 }
 
 /* -------text & button------- */
 .welcome__text {
   font-family: Avenir, Arial, Helvetica, sans-serif;
   font-size: 26px;
+  padding: 30px;
 }
 
 .asideDivBtn__style {
@@ -199,8 +203,6 @@ figure {
 .asideDivBtn__color {
   background-color: #cfbfbf;
   border-radius: 40px;
-  /* margin-top: 60px;
-  position: relative; */
 }
 
 .asideDivBtn__style:focus {
