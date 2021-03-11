@@ -208,4 +208,17 @@ figure {
 .asideDivBtn__style:focus {
   outline: none;
 }
+
+/* -------- java test------  */
+#camera {
+  background-color: lightsalmon;
+}
+
+#camera-description {
+  background-color: lightseagreen;
+}
+
+#h2-camera {
+  font-size: 18px;
+}
 /*# sourceMappingURL=style.css.map */
