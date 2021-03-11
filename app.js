@@ -11,6 +11,7 @@ let listenBtn = document.getElementsByClassName("asideDivBtn__style");
 
 listenBtn[0].addEventListener("click", function (event) {
   articles[1].classList.toggle("hidden__class");
+  articles[0].classList.toggle("test");
   /*  articles[1].classList.toggle("hidden__class");
   articles[2].classList.toggle("hidden__class");
   articles[3].classList.toggle("hidden__class");

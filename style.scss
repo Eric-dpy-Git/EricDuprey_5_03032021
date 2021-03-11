@@ -5,6 +5,7 @@
 
 $primaire: #f8ecf4;
 $secondaire: rgb(207, 191, 191);
+$tertiaire: purple;
 
 .header__style,
 .footer__style {
@@ -14,19 +15,26 @@ $secondaire: rgb(207, 191, 191);
 .header__display,
 .footer__display {
   display: flex;
+  justify-content: space-around;
 }
 .header__color,
 .footer__color {
   background-color: $secondaire;
 }
-.fa-arrow-circle-left {
-  font-size: 20px;
-  margin: 10px;
+.fa__box {
+  margin: auto 0 auto 10px;
+
+  font-size: 30px;
+  color: $tertiaire;
 }
+.fa-arrow-circle-left {
+  color: $tertiaire;
+}
+
 .logo__box-style {
   width: 250px;
   height: 80px;
-  margin: auto 30px;
+  margin: auto 0 auto 15px;
 }
 .logo__box-display {
   display: flex;
@@ -56,10 +64,14 @@ $secondaire: rgb(207, 191, 191);
   background-image: url(front-end/images/background__img.jpg);
   background-repeat: round;
   min-width: 320px;
-  min-height: 400px;
+  min-height: 800px;
+}
+.test {
+  height: 100px;
 }
 /* --------section part-------- */
 .section__style {
+  margin-top: 150px;
   min-width: 320px;
 }
 .section__aside {
@@ -70,8 +82,8 @@ $secondaire: rgb(207, 191, 191);
 .aside__div-display {
   text-align: center;
   min-width: 250px;
+  min-height: 200px;
   margin: 0 auto;
-  padding: 100px 0;
 }
 .aside__color {
   background-color: $primaire;
@@ -79,8 +91,13 @@ $secondaire: rgb(207, 191, 191);
 }
 .aside__style {
   max-width: 1024px;
-  height: 600px;
+  /* height: 600px; */
   margin: 0 auto;
+  /* display: flex;
+  flex-direction: column; */
+}
+.fa-arrow-right {
+  padding: 20px;
 }
 
 /* --------aside part --------- */
@@ -122,6 +139,10 @@ figure {
   background-color: $secondaire;
   border-radius: 40px;
 }
+.btn__article:focus {
+  outline: none;
+  border: none;
+}
 /* --------article card---------- */
 /* --------article part --------- */
 
@@ -139,7 +160,7 @@ figure {
 .asideDivBtn__style {
   width: 200px;
   height: 50px;
-  margin: 0 auto;
+  margin: 0 10px;
   font-family: Avenir, Arial, Helvetica, sans-serif;
   font-size: 22px;
   font-weight: 900;
@@ -147,6 +168,9 @@ figure {
 .asideDivBtn__color {
   background-color: $secondaire;
   border-radius: 40px;
-  margin-top: 60px;
-  position: relative;
+  /* margin-top: 60px;
+  position: relative; */
+}
+.asideDivBtn__style:focus {
+  outline: none;
 }
