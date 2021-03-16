@@ -1,29 +1,37 @@
-const mainColor = document.getElementById("main"); //constante pour l'élément main
-const section = document.getElementById("section-2"); //constante pour l'élément section
+const mainColor = document.getElementById("main"); //constant for main element
+const section = document.getElementById("section-2"); //constant for section element
 
-let listenBtn = document.getElementsByClassName("asideDivBtn__style"); //variable pour l'élément bouton
+let listenBtn = document.getElementsByClassName("asideDivBtn__style"); //variable for button element
 
-section.classList.add("hidden__class"); //ajoute la class
-mainColor.classList.add("main__color"); //ajoute la class
+section.classList.add("hidden__class"); //add the class
+mainColor.classList.add("main__color"); //add the class
 
-//à l'écoute du click du bouton défini dans la variable
+//listening to the click of the button defined in the variable
 listenBtn[0].addEventListener("click", function (event) {
-  section.classList.toggle("hidden__class"); //ajoute la class sur l'élément défini par une variable
-  mainColor.classList.toggle("main__color"); //ajoute la class sur l'élément défini par une variable
+  section.classList.toggle("hidden__class"); //adds the class on the element defined by a variable
+  mainColor.classList.toggle("main__color"); //adds the class on the element defined by a variable
 });
 
-let url = "http://localhost:3000/api/cameras";
-
+let url = "http://localhost:3000/api/cameras"; //creation of a server address variable
+//fetch then transform the response into json
 fetch(url).then((response) =>
   response.json().then((data) => {
-    console.log(data);
-    console.log(data.length);
-    console.log(data[0].name);
     document.getElementById("h2-camera-0").textContent = data[0].name;
-    document.getElementById("img__1").src = data[2].imageUrl;
+    document.getElementById("img__1").src = data[0].imageUrl;
     document.getElementById("description-1").textContent = data[0].description;
   })
 );
+
+/* let affichage = "<div>";
+for (let i of data) {
+  affichage += `<div>${i.name}</div>`;
+}
+affichage += "</div>";
+document.querySelector("#test").innerHTML = affichage; */
+
+/* console.log(data);
+console.log(data.length);
+console.log(data[0].name); */
 
 /* fetch(url)
   .then((res) => res.json())
