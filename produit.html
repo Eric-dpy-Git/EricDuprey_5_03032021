@@ -32,15 +32,28 @@
           <i class="fas fa-cart-arrow-down"></i>
         </div>
       </header>
-      <main class="main__color">
-        <h1>Api</h1>
-
-        <div id="camera-0"></div>
-        <div id="camera-1"></div>
-        <div id="camera-description"></div>
+      <main class="main__color main__product-style">
+        <h1 class="product__h1-style">Choisisez vos options et ajoutez au panier</h1>
+        <section id="product__section" class="product__section-style">
+          <article id="product__article" class="product__article-style">
+            <img id="product__img" with="300" height="300"></img>
+            <div id="product__text" class="product__text-style">
+              <h2 id="product__title"></h2>
+              <p id="product__description"></p>
+              <p id="product__price">testhtml</p>
+              <form>
+                <select>
+                  <option value="lentille1">Lentille 1</option>
+                  <option value="lentille2">Lentille 2</option>
+                </select>
+              <input class="btn__article" type="submit" value="Ajouter au panier" >
+              </form>
+            </div>
+          </article>
+        </section>
       </main>
       <footer class="footer__style footer__display footer__color"></footer>
     </div>
-    <script src="app2.js"></script>
+    <script src="product.js"></script>
   </body>
 </html>
