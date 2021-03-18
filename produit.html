@@ -33,26 +33,39 @@
         </div>
       </header>
       <main class="main__color main__product-style">
-        <h1 class="product__h1-style">Choisisez vos options et ajoutez au panier</h1>
+        <h1 class="product__h1-style">
+          Choisissez vos options et ajoutez au panier
+        </h1>
         <section id="product__section" class="product__section-style">
           <article id="product__article" class="product__article-style">
-            <img id="product__img" with="300" height="300"></img>
+            <img id="product__img" with="300" height="300" />
             <div id="product__text" class="product__text-style">
               <h2 id="product__title"></h2>
-              <p id="product__description"></p>
-              <p id="product__price">testhtml</p>
+              <p
+                id="product__description"
+                class="product__description-style"
+              ></p>
+              <p id="product__price"></p>
               <form>
-                <select>
-                  <option value="lentille1">Lentille 1</option>
-                  <option value="lentille2">Lentille 2</option>
+                <label for="option__product">Choisissez une option de lentille : </br></label>
+                <select class="btn__article" name="option__product" id="option__product">
+                 <!-- here javascript injection -->
                 </select>
-              <input class="btn__article" type="submit" value="Ajouter au panier" >
+              </form>
+              <form action="#">
+                <input
+                  class="btn__article"
+                  type="submit"
+                  value="Ajouter au panier"
+                />
               </form>
             </div>
           </article>
         </section>
       </main>
-      <footer class="footer__style footer__display footer__color"></footer>
+      <footer class="footer__style footer__display footer__color">
+        <p class="signature__style">Designed by Éric Duprey</p>
+      </footer>
     </div>
     <script src="product.js"></script>
   </body>

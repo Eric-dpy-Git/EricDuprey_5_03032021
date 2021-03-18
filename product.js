@@ -1,21 +1,33 @@
 //retrieving query string in url
 const urlId = window.location.search;
-//to take off "?" keep only id
+//to take off "?" and keep only id
 const onlyId = urlId.slice(1);
-//creation of a server address variable
+//creation of a server address variable + id
 url = `http://localhost:3000/api/cameras/${onlyId}`;
-/* let myProduct = url; */
 fetch(url).then((response) =>
   response.json().then((data) => {
-    console.log(data);
     document.getElementById("product__img").src = data.imageUrl;
     document.getElementById("product__title").innerText = data.name;
     document.getElementById("product__description").innerText =
       data.description;
-    /* let prix = data.price / 100; */
-    let string = " €";
+    //variable to get "€" after price
+    let stringEuro = " €";
     document.getElementById("product__price").innerHTML =
-      data.price / 100 + string;
-    /* console.log(prix); */
+      //Divise price
+      data.price / 100 + stringEuro;
+    //variable to show where to inject html
+    let show =
+      '<select class="btn__article" name="option__product" id="option__product"></select>';
+    //iteration loop of the array
+    for (let i of data.lenses) {
+      //in show where to inject html insert the iteration
+      show += `<option value="[]" class="option__product-choice">${i}</option>`;
+    }
+    //do the action to inject html with id emplacement
+    document.getElementById("option__product").innerHTML = show;
   })
 );
+//---------------------------------------add to cart---------------------------------
+//get form id
+const formId = document.getElementsByClassName("option__product-choice");
+console.log(formId);

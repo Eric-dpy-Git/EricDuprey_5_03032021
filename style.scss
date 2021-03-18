@@ -2,11 +2,15 @@
   font-family: fh_faith;
   src: url(/front-end/Fonts/fh_faith.otf);
 }
+@font-face {
+  font-family: HomemadeApple-Regular;
+  src: url(/front-end/Fonts/HomemadeApple-Regular.ttf);
+}
 
 $primaire: #f8ecf4;
 $secondaire: rgb(207, 191, 191);
 $tertiaire: purple;
-
+/* -----header & footer -------- */
 .header__style,
 .footer__style {
   min-width: 320px;
@@ -30,7 +34,6 @@ $tertiaire: purple;
 .fa-arrow-circle-left {
   color: $tertiaire;
 }
-
 .logo__box-style {
   width: 250px;
   height: 80px;
@@ -55,7 +58,11 @@ $tertiaire: purple;
 .brand__font-style {
   margin: auto;
 }
-/* -----header & footer -------- */
+.signature__style {
+  margin: 80px auto;
+  font-size: 16px;
+  font-family: HomemadeApple-Regular;
+}
 /* ------- main part --------- */
 #main__page-wrapper {
   min-width: 320px;
@@ -143,6 +150,8 @@ figure {
   background-color: $secondaire;
   height: 40px;
   border-radius: 40px;
+  margin: 10px auto;
+  border: 2px black solid;
 }
 .btn__article:focus {
   outline: none;
@@ -200,7 +209,6 @@ figure {
 .product__section-style {
   min-width: 310px;
   max-width: 1240px;
-  /* min-height: 600px; */
   border-radius: 40px;
   margin: 0 auto 20px auto;
   text-align: center;
@@ -217,9 +225,12 @@ figure {
   margin: 8% auto;
 }
 #product__img {
-  width: 300px;
-  height: 300px;
+  min-width: 300px;
+  min-height: 340px;
   margin: 8% auto;
   border-radius: 40px;
   box-shadow: lightgrey 10px 10px 10px;
+}
+.product__description-style {
+  max-width: 400px;
 }
