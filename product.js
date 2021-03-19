@@ -20,8 +20,8 @@ fetch(url).then((response) =>
       '<select class="btn__article" name="option__product" id="option__product"></select>';
     //iteration loop of the array
     for (let i of data.lenses) {
-      //in show where to inject html insert the iteration
-      show += `<option value="[]" class="option__product-choice">${i}</option>`;
+      //in show where to inject html & insert the iteration --> the value can be a variable !
+      show += `<option value="${i}" class="option__product-choice">${i}</option>`;
     }
     //do the action to inject html with id emplacement
     document.getElementById("option__product").innerHTML = show;
