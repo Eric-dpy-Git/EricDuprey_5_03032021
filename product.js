@@ -16,12 +16,11 @@ fetch(url).then((response) =>
       //Divise price
       data.price / 100 + stringEuro;
     //variable to show where to inject html
-    let show =
-      '<select class="btn__article" name="option__product" id="option__product"></select>';
+    let show = "";
     //iteration loop of the array
     for (let i of data.lenses) {
       //in show where to inject html & insert the iteration --> the value can be a variable !
-      show += `<option value="${i}" class="option__product-choice">${i}</option>`;
+      show += `<option value="${i}" class="option__product-choice" onchange="getSelectValue">${i}</option>`;
     }
     //do the action to inject html with id emplacement
     document.getElementById("option__product").innerHTML = show;
@@ -29,5 +28,10 @@ fetch(url).then((response) =>
 );
 //---------------------------------------add to cart---------------------------------
 //get form id
-const formId = document.getElementsByClassName("option__product-choice");
-console.log(formId);
+let testing = document.getElementById("option__product");
+let result = document.getElementsByTagName("h2");
+
+testing.addEventListener,
+  function (event) {
+    console.log(selection.selectedIndex);
+  };
