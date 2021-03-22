@@ -54,24 +54,27 @@ fetch(url).then((response) =>
       //parse methode for get items in local storage
       let storedProduct = JSON.parse(localStorage.getItem("products"));
       //alert message---------------------------not working
-      const alertMessage = () => {
-        if (window.confirm(`${data.name} option: ${text}`)) {
-          window.location.href("index.html");
-        } else window.location.href("index.html");
-      };
+      /*  const alertMessage = () => {
+        if (
+          window.confirm(
+            `Le produit ${data.name} option: ${text}`
+          )
+        ) {
+          window.location.href = "index.html";
+        } else { window.location.href = "index.html";
+      }; */
       //---------------------------------------not working
-
       //first : check if the local storage contains anything
       if (storedProduct) {
+        //add selectioned product in local storage if already has product
         storedProduct.push(productSet);
         localStorage.setItem("products", JSON.stringify(storedProduct));
-        alertMessage();
       } else {
+        //if not --> create & add
         storedProduct = [];
         storedProduct.push(productSet);
         localStorage.setItem("products", JSON.stringify(storedProduct));
         console.log(storedProduct);
-        alertMessage();
       }
     });
   })

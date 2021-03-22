@@ -38,7 +38,7 @@ fetch(url).then((response) =>
             `;
     }
 
-    display += "</div>"; //end of dispay div
+    display += "</div>"; //end of display div
     document.getElementById("section-2").innerHTML = display; //display html elements into Dom with id
   })
 );

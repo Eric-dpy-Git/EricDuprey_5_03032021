@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="front-end/images/favicon.jpeg" />
+    <script
+      src="https://kit.fontawesome.com/2db2f9c310.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Panier</title>
+  </head>
+  <body>
+    <div id="main__page-wrapper">
+      <header class="header__style header__display header__color">
+        <div class="logo__box-style logo__box-display">
+          <div class="logo__img-style">
+            <img
+              width="50"
+              height="45"
+              class="logo"
+              src="front-end/images/logo.jpg"
+              alt="logo Orinoco représenté par un caddie"
+            />
+          </div>
+          <span class="brand__font brand__font-style">Orinoco</span>
+        </div>
+        <div class="fa__box">
+          <a href="index.html" class="fa__box-a"
+            ><i class="fas fa-arrow-circle-left"></i
+          ></a>
+          <a href="cart.html" class="fa__box-a"
+            ><i class="fas fa-cart-arrow-down"></i
+          ></a>
+        </div>
+      </header>
+      <main class="main__color main__product-style">
+        <h1 class="product__h1-style">Consultez et validez votre panier</h1>
+        <section id="product__section" class="product__section-style">
+          <article
+            id="product__article"
+            class="product__article-style article__cart"
+          >
+            <div class="selectioned__product-style">
+              <h2 class="selectioned__product-title">Mes produits :</h2>
+              <div id="cart__product-name"></div>
+              <div class="quantity">Quantitée</div>
+            </div>
+            <div class="fee__product-style">
+              <h2 class="selectioned__product-title">
+                Montant de mon panier :
+              </h2>
+              <div class="item">TVA</div>
+              <div class="quantity">TTC</div>
+            </div>
+          </article>
+        </section>
+      </main>
+      <footer class="footer__style footer__display footer__color">
+        <p class="signature__style">Designed by Éric Duprey</p>
+      </footer>
+    </div>
+    <script src="cart.js"></script>
+  </body>
+</html>

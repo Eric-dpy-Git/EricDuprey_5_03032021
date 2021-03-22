@@ -31,14 +31,22 @@
 
 .fa__box {
   margin: auto 0 auto 10px;
+  /* font-size: 30px;
+  color: $tertiaire; */
+}
+
+.fa__box-a {
+  color: purple;
+  margin: auto 0 auto 10px;
   font-size: 30px;
-  color: purple;
 }
 
-.fa-arrow-circle-left {
-  color: purple;
-}
-
+/* .fa-arrow-circle-left,
+.fa-cart-arrow-down {
+  color: $tertiaire;
+  margin: auto 0 auto 10px;
+  font-size: 30px;
+} */
 .logo__box-style {
   width: 250px;
   height: 80px;
@@ -283,5 +291,18 @@ figure {
 
 .product__description-style {
   max-width: 400px;
+}
+
+/* ---------------------cart--------------------- */
+.article__cart {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: brown;
+}
+
+.selectioned__product-style,
+.fee__product-style {
+  min-width: 250px;
+  background-color: bisque;
 }
 /*# sourceMappingURL=style.css.map */
