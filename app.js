@@ -16,6 +16,7 @@ let url = "http://localhost:3000/api/cameras"; //creation of a server address va
 fetch(url).then((response) =>
   response.json().then((data) => {
     //variable to display the results
+    console.log(data);
     let display = '<div id="article__box">';
     //i = iteration of data
     for (let i of data) {

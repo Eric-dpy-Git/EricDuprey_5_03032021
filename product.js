@@ -48,7 +48,8 @@ fetch(url).then((response) =>
         productName: data.name,
         productId: data._id,
         productPrice: data.price,
-        choixLentille: text,
+        productLense: text,
+        productImage: data.imageUrl,
       };
       //---------------------------------------local storage---------------------------------
       //parse methode for get items in local storage
