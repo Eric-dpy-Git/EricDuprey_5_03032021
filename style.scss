@@ -243,8 +243,9 @@ figure {
 }
 /* ---------------------cart--------------------- */
 .article__cart {
+  min-width: 300px;
   justify-content: space-around;
-  background-color: brown;
+  background-color: bisque;
 }
 .selectioned__product-style,
 .fee__product-style {
