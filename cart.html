@@ -44,9 +44,56 @@
           <article
             id="product__article"
             class="product__article-style article__cart"
-          ></article>
-          <article id="cart__price" class="cart__price-style"><h2>Total de votre commande</h2></article>
-          <article id="cart__form" class="cart__form-style"><h2>Envoyez votre commande</h2></article>
+          >
+          <!-- here cart informations with javascript -->
+        </article>
+          <article id="cart__price" class="cart__price-style">
+            <div class="empty__cartBtn-and-total__textBox">
+             <form>
+                <input
+                  class="btn__article"
+                  id="btn__clearCart"
+                  type="submit"
+                  value="Vider tout le panier"
+                />
+              </form>
+            <h2>Total de votre commande</h2>
+            <span id="totalPrice__cartDisplay"></span>
+            </div>
+              <!-- here price informations with javascript -->
+            </article>
+          <article id="cart__form" class="cart__form-style"><h2>Envoyez votre commande</h2>
+              <!-- here form informations with javascript -->
+             
+              <label for="firstname">Prénom :</label>
+              <input type="text" class="form__style" id="firstname" name="firstname" required></br>
+              <label for="lastname">Nom :</label>
+              <input type="text" class="form__style" id="lastname" name="lastname" required></br>
+              <label for="lmail">Mail :</label>
+              <input type="text" class="form__style" id="mail" name="mail" required></br>
+              <p>Adresse :</p>
+              <label for="streetNumber">N° :</label>
+              <input type="text" class="form__style" id="streetNumber" name="streetNumber" required></br>
+              <label for="street">Rue :</label>
+              <input type="text" class="form__style" id="street" name="street" required></br>
+              <label for="city">Ville :</label>
+              <input type="text" class="form__style" id="city" name="city" required></br>
+              <label for="postcode">Code postal :</label>
+              <input type="text" class="form__style" id="postcode" name="postcode" required>
+              <form>
+                <input
+                  class="btn__article"
+                  id="btn__order"
+                  type="submit"
+                  value="Commander"
+                />
+              </form>
+              
+            
+
+             
+                
+          </article>
         </section>
       </main>
       

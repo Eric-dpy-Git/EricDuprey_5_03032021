@@ -92,7 +92,7 @@
 
 #main,
 .main__product-style {
-  font-family: avenir, Arial, Helvetica, sans-serif;
+  font-family: Avenir, Arial, Helvetica, sans-serif;
   min-width: 320px;
 }
 
@@ -149,6 +149,7 @@
       flex-wrap: wrap;
   min-width: 250px;
   max-width: 1024px;
+  min-height: 550px;
   margin: 25px auto;
   border-radius: 15px;
   -webkit-box-shadow: 10px 10px 10px lightgrey;
@@ -180,7 +181,7 @@ figure {
   background-color: white;
   min-width: 300px;
   max-width: 500px;
-  height: 200px;
+  min-height: 200px;
   margin: auto;
   border-radius: 15px;
   -webkit-box-shadow: lightgrey 10px 10px 10px;
@@ -191,7 +192,7 @@ figure {
   background-color: #cfbfbf;
   height: 40px;
   border-radius: 40px;
-  margin: auto;
+  margin: 10px auto;
   border: 2px black solid;
 }
 
@@ -202,6 +203,10 @@ figure {
 .btn__article:focus {
   outline: none;
   border: none;
+}
+
+#description-1 {
+  padding: 10px;
 }
 
 /* --------article card---------- */
@@ -304,6 +309,12 @@ figure {
       justify-content: space-around;
 }
 
+.empty__cart-font {
+  font-size: 22px;
+  color: brown;
+  font-weight: bold;
+}
+
 .cart__box {
   background-color: white;
   margin: 15px auto;
@@ -313,10 +324,10 @@ figure {
 }
 
 .cart__img {
-  margin: 0 auto;
-  padding: 15px;
-  width: 60px;
-  height: 40px;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80px;
+  height: 60px;
   border-radius: 40px;
   -webkit-box-shadow: lightgrey 10px 10px 10px;
           box-shadow: lightgrey 10px 10px 10px;
@@ -327,20 +338,36 @@ figure {
 }
 
 .btn__remove-style {
+  height: 30px;
+  width: 40px;
   margin: 0 0 10px 0;
   border-radius: 40px;
   -webkit-box-shadow: lightgrey 10px 10px 10px;
           box-shadow: lightgrey 10px 10px 10px;
+  border: 2px lightgrey solid;
 }
 
 .cart__price-style,
 .cart__form-style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 15px auto;
   text-align: center;
-  height: 90px;
+  min-height: 200px;
   background-color: white;
   min-width: 260px;
   border-radius: 40px;
   -webkit-box-shadow: lightgrey 10px 10px 10px;
           box-shadow: lightgrey 10px 10px 10px;
+}
+
+.form__style {
+  width: 300px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */

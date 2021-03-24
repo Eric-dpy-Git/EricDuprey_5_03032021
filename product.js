@@ -76,6 +76,7 @@ fetch(url).then((response) =>
         storedProduct.push(productSet);
         localStorage.setItem("products", JSON.stringify(storedProduct));
         console.log(storedProduct);
+        console.log(storedProduct);
       }
     });
   })
