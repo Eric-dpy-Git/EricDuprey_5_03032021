@@ -43,39 +43,3 @@ fetch(url).then((response) =>
     document.getElementById("section-2").innerHTML = display; //display html elements into Dom with id
   })
 );
-
-/*  document.getElementById("h2-camera-0").textContent = data[0].name;
-    document.getElementById("img__1").src = data[0].imageUrl;
-    document.getElementById("description-1").textContent = data[0].description; */
-
-/* let affichage = "<div>";
-for (let i of data) {
-  affichage += `<div>${i.name}</div>`;
-}
-affichage += "</div>";
-document.querySelector("#test").innerHTML = affichage; */
-
-/* console.log(data);
-console.log(data.length);
-console.log(data[0].name); */
-
-/* fetch(url)
-  .then((res) => res.json())
-  .then((data) => (id = data[0].id));
-console.log(data[0].id); */
-
-/* let articles = document.getElementsByTagName("article"); */
-
-/* fetch(url).then((response) =>
-  response.json().then((data);
-  console.log(data) */
-/* => { */
-/*  console.log(data);
-    let affichage = "<h2>";
-    for (let camera of data) {
-      affichage += `<h2 id="h2-camera-0">${camera.name}</h2>`;
-    }
-    document.querySelector("#h2-camera-0").innerHTML = affichage; */
-/* document.querySelector("#camera").innerHTML = affichage; */
-/*  })
-); */

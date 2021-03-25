@@ -53,31 +53,19 @@ fetch(url).then((response) =>
       };
       //---------------------------------------local storage---------------------------------
       //parse methode for get items in local storage
-      let storedProduct = JSON.parse(localStorage.getItem("products"));
-      //alert message---------------------------not working
-      /*  const alertMessage = () => {
-        if (
-          window.confirm(
-            `Le produit ${data.name} option: ${text}`
-          )
-        ) {
-          window.location.href = "index.html";
-        } else { window.location.href = "index.html";
-      }; */
-      //---------------------------------------not working
+      let storedProducts = JSON.parse(localStorage.getItem("storedProducts"));
       //first : check if the local storage contains anything
-      if (storedProduct) {
+      if (storedProducts) {
         //add selectioned product in local storage if already has product
-        storedProduct.push(productSet);
-        localStorage.setItem("products", JSON.stringify(storedProduct));
+        storedProducts.push(productSet);
+        localStorage.setItem("storedProducts", JSON.stringify(storedProducts));
       } else {
         //if not --> create & add
-        storedProduct = [];
-        storedProduct.push(productSet);
-        localStorage.setItem("products", JSON.stringify(storedProduct));
-        console.log(storedProduct);
-        console.log(storedProduct);
+        storedProducts = [];
+        storedProducts.push(productSet);
+        localStorage.setItem("storedProducts", JSON.stringify(storedProducts));
       }
+      console.log(storedProducts);
     });
   })
 );
