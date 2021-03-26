@@ -37,7 +37,11 @@ if (storedProducts === null || storedProducts == 0) {
       i.productName
     } "><i class="fas fa-trash-alt"></i></button></form></div>`;
     cartProductPlace.innerHTML = showCart; //say where to do insert
-    console.log(i.productId);
+    /*   console.log([i.productId]);
+    let inline = [i.productId];
+    console.log(inline); */
+    //------------------------------------------------------
+
     //------------------------------------------------------
     const orderBtn = document.getElementById("btn__order");
     orderBtn.addEventListener("click", (e) => {
