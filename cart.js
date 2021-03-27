@@ -4,7 +4,17 @@
 let storedProducts = JSON.parse(localStorage.getItem("storedProducts"));
 
 //get emplacement for inject local storage informations
-let cartProductPlace = document.getElementById("product__article");
+//-----------------not working :-(----------
+/* let cartProductPlace = document.getElementById("product__article");
+for (let i of storedProducts) {
+  console.log(i.productId);
+  const entries = i.productId;
+
+  const obj = Object.fromEntries(entries);
+
+  console.log(obj);
+} */
+//-----------------not working :-(----------
 
 //---------------------------------get cart data------------------------------------------
 
@@ -57,13 +67,19 @@ if (storedProducts === null || storedProducts == 0) {
         },
         products: [i.productId],
       };
-      const promise01 = fetch("http://localhost:3000/api/cameras/order", {
+      let promise01 = fetch("http://localhost:3000/api/cameras/order", {
         method: "POST",
         body: JSON.stringify(testing),
         headers: {
           "Content-Type": "application/json",
         },
-      });
+      })
+        .then((reponse) => {
+          return reponse.json();
+        })
+        .then((test) => {
+          console.log(test);
+        });
     });
     //----------------------------cart addition inside storedProduct condition--------------------------
     //create tab for reduce work
