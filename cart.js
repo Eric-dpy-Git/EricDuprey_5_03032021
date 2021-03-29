@@ -38,7 +38,6 @@ if (storedProducts === null || storedProducts == 0) {
     cartProductPlace.innerHTML = showCart; //say where to do insert
   }
 }
-
 //remove one cart product------------------------------------------- not working
 let removeBtn = document.getElementsByClassName("btn__remove");
 //loop to get index of products list
@@ -56,7 +55,6 @@ for (let j = 0; j < removeBtn.length; j++) {
   });
 }
 //remove one cart product------------------------------------------- not working
-
 //clear all cart--------------------------------------------------
 //get the clear cart button
 const btnClearCart = document.getElementById("btn__clearCart");
@@ -67,11 +65,11 @@ btnClearCart.addEventListener("click", (e) => {
   localStorage.removeItem("storedProducts");
   window.location.href = "cart.html"; //refresh page
 });
-
 //----------------------------cart addition inside storedProduct condition--------------------------
 //create tab for reduce work
 let cartPriceArray = [];
 //iteration of price list
+
 for (let k = 0; k < storedProducts.length; k++) {
   let localStoragePriceList = storedProducts[k].productPrice;
   cartPriceArray.push(localStoragePriceList);
@@ -92,14 +90,14 @@ orderBtn.addEventListener("click", (e) => {
   e.preventDefault();
   //----------------------------get only products id
   let cartIdArray = [];
-  for (let k = 0; k < storedProducts.length; k++) {
-    let localStoragePriceId = storedProducts[k].productId;
+  for (let l = 0; l < storedProducts.length; l++) {
+    let localStoragePriceId = storedProducts[l].productId;
     /* console.log(localStoragePriceId); */
     cartIdArray.push(localStoragePriceId);
     /* console.log(cartIdArray); */
   }
   //----------------------------prepare elements to send at the server
-  const testing = {
+  const orderElement = {
     contact: {
       firstName: document.getElementById("firstname").value,
       lastName: document.getElementById("lastname").value,
@@ -113,7 +111,7 @@ orderBtn.addEventListener("click", (e) => {
   //post fetch & stringify the elements to server
   let promise01 = fetch("http://localhost:3000/api/cameras/order", {
     method: "POST",
-    body: JSON.stringify(testing),
+    body: JSON.stringify(orderElement),
     headers: {
       "Content-Type": "application/json",
     },
@@ -122,8 +120,28 @@ orderBtn.addEventListener("click", (e) => {
     .then((reponse) => {
       return reponse.json();
     })
+
     //then name confirmation
     .then((orderConfirmation) => {
       console.log(orderConfirmation);
+      console.log(orderConfirmation.orderId);
+      console.log(orderConfirmation.contact.firstName);
+      console.log(orderConfirmation.contact.lastName);
+
+      let productList = orderConfirmation.products;
+      let productsArray = [];
+      for (let m = 0; m < productList.length; m++) {
+        let testing = productList[m].name;
+        /* console.log(localStoragePriceId); */
+        productsArray.push(testing);
+        console.log(productsArray);
+
+        document.getElementById(
+          "orderDisplay"
+        ).innerHTML = `<div class="order__confirmation"><div class="order__text-box"><p class="order__text">Bravo, ${orderConfirmation.contact.firstName} ${orderConfirmation.contact.lastName}, votre commande n° ${orderConfirmation.orderId} est validée ! </p></br>
+      <p class="order__text">Restez dans votre cannapé, la commande : ${productsArray} pour un montant de ${totalOfLocalStoragePrice} vous sera livré trés rapidement. </p></br>
+      <p class="order__text">À bientôt sur Orinoco</p></div>
+      </div>`;
+      }
     });
 });

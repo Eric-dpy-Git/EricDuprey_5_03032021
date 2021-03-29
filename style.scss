@@ -304,3 +304,19 @@ figure {
   border-radius: 40px;
 }
 //------------------------------------------------------
+.order__confirmation {
+  background-color: $primaire;
+  min-height: 400px;
+  min-width: 300px;
+  text-align: center;
+  margin: 20px auto;
+  border: lightgrey 1px solid;
+  border-radius: 40px;
+}
+.order__text-box {
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 30px auto;
+  background-color: $primaire;
+}
