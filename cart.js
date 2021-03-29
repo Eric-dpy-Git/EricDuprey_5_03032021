@@ -113,7 +113,7 @@ if (storedProducts === null || storedProducts == 0) {
       },
       products: cartIdArray,
     };
-    /* console.log(cartIdArray); */
+
     //post fetch & stringify the elements to server
     let promise01 = fetch("http://localhost:3000/api/cameras/order", {
       method: "POST",
@@ -129,19 +129,11 @@ if (storedProducts === null || storedProducts == 0) {
 
       //then name confirmation
       .then((orderConfirmation) => {
-        console.log(orderConfirmation);
-        console.log(orderConfirmation.orderId);
-        console.log(orderConfirmation.contact.firstName);
-        console.log(orderConfirmation.contact.lastName);
-
         let productList = orderConfirmation.products;
         let productsArray = [];
         for (let m = 0; m < productList.length; m++) {
           let testing = productList[m].name;
-          /* console.log(localStoragePriceId); */
           productsArray.push(testing);
-          console.log(productsArray);
-
           document.getElementById(
             "orderDisplay"
           ).innerHTML = `<div class="order__confirmation">
@@ -164,3 +156,94 @@ if (storedProducts === null || storedProducts == 0) {
       });
   });
 }
+//-------------------------------reg ex
+let form = document.getElementById("form__order");
+
+//listen firstname modification---------------------------------------
+form.firstname.addEventListener("change", function () {
+  validFirstname(this);
+});
+//firstname validation-------------------------------------------------
+const validFirstname = function (inputFirstname) {
+  let firstnameRegExp = new RegExp("^[a-z]+[ -']?[[a-z]+[ -']?]*[a-z]+$", "gi");
+  //get emplacement small tag
+  let small = document.getElementById("firstname__message");
+  //if test is true
+  if (firstnameRegExp.test(inputFirstname.value)) {
+    small.innerHTML = "prénom valide";
+    small.classList.remove("text__false");
+    small.classList.add("text__true");
+  } else {
+    small.innerHTML = "prénom non valide";
+    small.classList.remove("text__true");
+    small.classList.add("text__false");
+  }
+};
+
+//listen lastname modification---------------------------------------
+form.lastname.addEventListener("change", function () {
+  validLastname(this);
+});
+//firstname validation-------------------------------------------------
+const validLastname = function (inputLastname) {
+  let lastnameRegExp = new RegExp("^[a-z]+[ -']?[[a-z]+[ -']?]*[a-z]+$", "gi");
+  //get emplacement small tag
+  let small = document.getElementById("lastname__message");
+  //if test is true
+  if (lastnameRegExp.test(inputLastname.value)) {
+    small.innerHTML = "nom valide";
+    small.classList.remove("text__false");
+    small.classList.add("text__true");
+  } else {
+    small.innerHTML = "nom non valide";
+    small.classList.remove("text__true");
+    small.classList.add("text__false");
+  }
+};
+
+//listen adress modification---------------------------------------
+form.address.addEventListener("change", function () {
+  validAddress(this);
+});
+//address validation-------------------------------------------------
+const validAddress = function (inputAddress) {
+  let addressRegExp = new RegExp("");
+  //get emplacement small tag
+  let small = document.getElementById("address__message");
+  //if test is true
+  if (addressRegExp.test(inputAddress.value)) {
+    small.innerHTML = "adresse valide";
+    small.classList.remove("text__false");
+    small.classList.add("text__true");
+  } else {
+    small.innerHTML = "adresse non valide";
+    small.classList.remove("text__true");
+    small.classList.add("text__false");
+  }
+};
+
+//-------------------------------------------emailregex------------
+//listen email modification
+form.email.addEventListener("change", function () {
+  validEmail(this);
+});
+//email validation-------------------------------------------------
+const validEmail = function (inputEmail) {
+  //regexp email validation
+  let emailRegExp = new RegExp(
+    "^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$",
+    "g"
+  );
+  //get emplacement small tag
+  let small = document.getElementById("message");
+  //if test is true
+  if (emailRegExp.test(inputEmail.value)) {
+    small.innerHTML = "email valide";
+    small.classList.remove("text__false");
+    small.classList.add("text__true");
+  } else {
+    small.innerHTML = "email non valide";
+    small.classList.remove("text__true");
+    small.classList.add("text__false");
+  }
+};

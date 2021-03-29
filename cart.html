@@ -64,18 +64,21 @@
             </article>
           <article id="cart__form" class="cart__form-style"><h2>Envoyez votre commande</h2>
               <!-- here form informations with javascript -->
-
+              <form class="form__box-style" id="form__order">
               <label for="firstname">Prénom :</label>
               <input type="text" class="form__style" id="firstname" name="firstname" required></br>
+              <small id="firstname__message"></small></br>
               <label for="lastname">Nom :</label>
               <input type="text" class="form__style" id="lastname" name="lastname" required></br>
+              <small id="lastname__message"></small></br>
               <label for="address">Adresse :</label>
               <textarea type="text" class="form__style" id="address" name="address" required></textarea></br>
+              <small id="address__message"></small></br>
               <label for="city">Ville :</label>
               <input type="text" class="form__style" id="city" name="city" required></br>
               <label for="email">Mail :</label>
               <input type="text" class="form__style" id="email" name="email" required></br>
-              <form>
+              <small id="message"></small></br>
                 <input
                   class="btn__article"
                   id="btn__order"

@@ -366,6 +366,11 @@ figure {
           box-shadow: lightgrey 10px 10px 10px;
 }
 
+.form__box-style {
+  margin: 0 auto;
+  width: 300px;
+}
+
 .form__style {
   width: 300px;
   margin: 0 auto;
@@ -389,5 +394,13 @@ figure {
   font-weight: 500;
   margin: 30px auto;
   background-color: #f8ecf4;
+}
+
+.text__true {
+  color: green;
+}
+
+.text__false {
+  color: red;
 }
 /*# sourceMappingURL=style.css.map */
