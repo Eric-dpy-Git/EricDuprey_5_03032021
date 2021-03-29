@@ -16,7 +16,15 @@ const formatter = new Intl.NumberFormat("fr-FR", {
 if (storedProducts === null || storedProducts == 0) {
   const emptyCart = `
     <div class="empty__cart">
-      <p class="empty__cart-font">Hummm... Dommage ! votre panier est vide...</p>
+      <p class="empty__cart-font">Hummm... Dommage ! votre panier est vide...</p></br>
+      <form>
+             <a href="index.html">
+            <input
+                  class="btn__article"
+                  type="submit"
+                  value="Revenir à la page principale"
+                /></a>
+              </form>
     </div>`;
   cartProductPlace.innerHTML = emptyCart;
 } else {
@@ -37,111 +45,122 @@ if (storedProducts === null || storedProducts == 0) {
     } "><i class="fas fa-trash-alt"></i></button></form></div>`;
     cartProductPlace.innerHTML = showCart; //say where to do insert
   }
-}
-//remove one cart product------------------------------------------- not working
-let removeBtn = document.getElementsByClassName("btn__remove");
-//loop to get index of products list
-for (let j = 0; j < removeBtn.length; j++) {
-  removeBtn[j].addEventListener("click", (event) => {
-    event.preventDefault(); //dont refresh page
-    //variable for the selected id from itération
-    let selectRemoveId = storedProducts[j].productId;
-    //filter action in reverse with "!"
-    storedProducts = storedProducts.filter(
-      (el) => el.productId !== selectRemoveId
-    ); //send into local storage withe stringify
-    localStorage.setItem("storedroducts", JSON.stringify(storedProducts));
+  //remove one cart product------------------------------------------- not working
+  let removeBtn = document.getElementsByClassName("btn__remove");
+  //loop to get index of products list
+  for (let j = 0; j < removeBtn.length; j++) {
+    removeBtn[j].addEventListener("click", (event) => {
+      event.preventDefault(); //dont refresh page
+      //variable for the selected id from itération
+      let selectRemoveId = storedProducts[j].productId;
+      //filter action in reverse with "!"
+      storedProducts = storedProducts.filter(
+        (el) => el.productId !== selectRemoveId
+      ); //send into local storage withe stringify
+      localStorage.setItem("storedroducts", JSON.stringify(storedProducts));
+      window.location.href = "cart.html"; //refresh page
+    });
+  }
+  //remove one cart product------------------------------------------- not working
+  //clear all cart--------------------------------------------------
+  //get the clear cart button
+  const btnClearCart = document.getElementById("btn__clearCart");
+  //event with button
+  btnClearCart.addEventListener("click", (e) => {
+    e.preventDefault; //refresh page
+    //remove local storage key
+    localStorage.removeItem("storedProducts");
     window.location.href = "cart.html"; //refresh page
   });
-}
-//remove one cart product------------------------------------------- not working
-//clear all cart--------------------------------------------------
-//get the clear cart button
-const btnClearCart = document.getElementById("btn__clearCart");
-//event with button
-btnClearCart.addEventListener("click", (e) => {
-  e.preventDefault; //refresh page
-  //remove local storage key
-  localStorage.removeItem("storedProducts");
-  window.location.href = "cart.html"; //refresh page
-});
-//----------------------------cart addition inside storedProduct condition--------------------------
-//create tab for reduce work
-let cartPriceArray = [];
-//iteration of price list
+  //----------------------------cart addition inside storedProduct condition--------------------------
+  //create tab for reduce work
+  let cartPriceArray = [];
+  //iteration of price list
 
-for (let k = 0; k < storedProducts.length; k++) {
-  let localStoragePriceList = storedProducts[k].productPrice;
-  cartPriceArray.push(localStoragePriceList);
-}
-//cart price addition
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
-let totalOfLocalStoragePrice = cartPriceArray.reduce(reducer);
-//place to display total cart amount
-document.getElementById(
-  "totalPrice__cartDisplay"
-).innerHTML = totalOfLocalStoragePrice = formatter.format(
-  totalOfLocalStoragePrice / 100
-);
-
-//-----------------------------------------------------------------------------------------
-const orderBtn = document.getElementById("btn__order");
-orderBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  //----------------------------get only products id
-  let cartIdArray = [];
-  for (let l = 0; l < storedProducts.length; l++) {
-    let localStoragePriceId = storedProducts[l].productId;
-    /* console.log(localStoragePriceId); */
-    cartIdArray.push(localStoragePriceId);
-    /* console.log(cartIdArray); */
+  for (let k = 0; k < storedProducts.length; k++) {
+    let localStoragePriceList = storedProducts[k].productPrice;
+    cartPriceArray.push(localStoragePriceList);
   }
-  //----------------------------prepare elements to send at the server
-  const orderElement = {
-    contact: {
-      firstName: document.getElementById("firstname").value,
-      lastName: document.getElementById("lastname").value,
-      address: document.getElementById("address").value,
-      city: document.getElementById("city").value,
-      email: document.getElementById("email").value,
-    },
-    products: cartIdArray,
-  };
-  /* console.log(cartIdArray); */
-  //post fetch & stringify the elements to server
-  let promise01 = fetch("http://localhost:3000/api/cameras/order", {
-    method: "POST",
-    body: JSON.stringify(orderElement),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    //convert response in json
-    .then((reponse) => {
-      return reponse.json();
+  //cart price addition
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  let totalOfLocalStoragePrice = cartPriceArray.reduce(reducer);
+  //place to display total cart amount
+  document.getElementById(
+    "totalPrice__cartDisplay"
+  ).innerHTML = totalOfLocalStoragePrice = formatter.format(
+    totalOfLocalStoragePrice / 100
+  );
+
+  //-----------------------------------------------------------------------------------------
+  const orderBtn = document.getElementById("btn__order");
+  orderBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    //----------------------------get only products id
+    let cartIdArray = [];
+    for (let l = 0; l < storedProducts.length; l++) {
+      let localStoragePriceId = storedProducts[l].productId;
+
+      cartIdArray.push(localStoragePriceId);
+    }
+    //----------------------------prepare elements to send at the server
+    const orderElement = {
+      contact: {
+        firstName: document.getElementById("firstname").value,
+        lastName: document.getElementById("lastname").value,
+        address: document.getElementById("address").value,
+        city: document.getElementById("city").value,
+        email: document.getElementById("email").value,
+      },
+      products: cartIdArray,
+    };
+    /* console.log(cartIdArray); */
+    //post fetch & stringify the elements to server
+    let promise01 = fetch("http://localhost:3000/api/cameras/order", {
+      method: "POST",
+      body: JSON.stringify(orderElement),
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
+      //convert response in json
+      .then((reponse) => {
+        return reponse.json();
+      })
 
-    //then name confirmation
-    .then((orderConfirmation) => {
-      console.log(orderConfirmation);
-      console.log(orderConfirmation.orderId);
-      console.log(orderConfirmation.contact.firstName);
-      console.log(orderConfirmation.contact.lastName);
+      //then name confirmation
+      .then((orderConfirmation) => {
+        console.log(orderConfirmation);
+        console.log(orderConfirmation.orderId);
+        console.log(orderConfirmation.contact.firstName);
+        console.log(orderConfirmation.contact.lastName);
 
-      let productList = orderConfirmation.products;
-      let productsArray = [];
-      for (let m = 0; m < productList.length; m++) {
-        let testing = productList[m].name;
-        /* console.log(localStoragePriceId); */
-        productsArray.push(testing);
-        console.log(productsArray);
+        let productList = orderConfirmation.products;
+        let productsArray = [];
+        for (let m = 0; m < productList.length; m++) {
+          let testing = productList[m].name;
+          /* console.log(localStoragePriceId); */
+          productsArray.push(testing);
+          console.log(productsArray);
 
-        document.getElementById(
-          "orderDisplay"
-        ).innerHTML = `<div class="order__confirmation"><div class="order__text-box"><p class="order__text">Bravo, ${orderConfirmation.contact.firstName} ${orderConfirmation.contact.lastName}, votre commande n° ${orderConfirmation.orderId} est validée ! </p></br>
-      <p class="order__text">Restez dans votre cannapé, la commande : ${productsArray} pour un montant de ${totalOfLocalStoragePrice} vous sera livré trés rapidement. </p></br>
-      <p class="order__text">À bientôt sur Orinoco</p></div>
-      </div>`;
-      }
-    });
-});
+          document.getElementById(
+            "orderDisplay"
+          ).innerHTML = `<div class="order__confirmation">
+          <div class="order__text-box">
+            <p class="order__text">Bravo, ${orderConfirmation.contact.firstName} ${orderConfirmation.contact.lastName}, votre commande n° ${orderConfirmation.orderId} est validée ! </p></br>
+            <p class="order__text">Restez dans votre cannapé, la commande : ${productsArray} pour un montant de ${totalOfLocalStoragePrice} vous sera livré trés rapidement. </p></br>
+            <p class="order__text">À bientôt sur Orinoco</p></br>
+            <form>
+             <a href="index.html">
+            <input
+                  class="btn__article"
+                  id="btn__order"
+                  type="submit"
+                  value="Revenir à la page principale"
+                /></a>
+              </form>
+          </div>
+        </div>`;
+        }
+      });
+  });
+}
