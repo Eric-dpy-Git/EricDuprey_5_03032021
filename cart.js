@@ -16,15 +16,10 @@ const formatter = new Intl.NumberFormat("fr-FR", {
 if (storedProducts === null || storedProducts == 0) {
   const emptyCart = `
     <div class="empty__cart">
-      <p class="empty__cart-font">Hummm... Dommage ! votre panier est vide...</p></br>
-      <form>
-             <a href="index.html">
-            <input
-                  class="btn__article"
-                  type="submit"
-                  value="Revenir à la page principale"
-                /></a>
-              </form>
+      <p class="empty__cart-font">Hummm... Dommage ! votre panier est vide...</p></br>      
+        <form action="index.html">
+          <button  class="btn__article" type="submit">Retourner aux achats</button>
+        </form>  
     </div>`;
   cartProductPlace.innerHTML = emptyCart;
 } else {
@@ -38,11 +33,7 @@ if (storedProducts === null || storedProducts == 0) {
       i.productImage
     }"></img></div><div class="cart__name">1X ${i.productName} - ${
       i.productLense
-    } - ${(number = formatter.format(
-      number / 100
-    ))}</div><form><button class="btn__remove-style btn__remove" type="submit"${
-      i.productName
-    } "><i class="fas fa-trash-alt"></i></button></form></div>`;
+    } - ${(number = formatter.format(number / 100))}</div></div>`;
     cartProductPlace.innerHTML = showCart; //say where to do insert
   }
   //remove one cart product------------------------------------------- not working
@@ -124,19 +115,20 @@ if (storedProducts === null || storedProducts == 0) {
     })
       //convert response in json
       .then((reponse) => {
-        return reponse.json();
-      })
-
-      //then name confirmation
-      .then((orderConfirmation) => {
-        let productList = orderConfirmation.products;
-        let productsArray = [];
-        for (let m = 0; m < productList.length; m++) {
-          let testing = productList[m].name;
-          productsArray.push(testing);
-          document.getElementById(
-            "orderDisplay"
-          ).innerHTML = `<div class="order__confirmation">
+        if (reponse.ok) {
+          return (
+            reponse
+              .json()
+              //then name confirmation
+              .then((orderConfirmation) => {
+                let productList = orderConfirmation.products;
+                let productsArray = [];
+                for (let m = 0; m < productList.length; m++) {
+                  let testing = productList[m].name;
+                  productsArray.push(testing);
+                  document.getElementById(
+                    "orderDisplay"
+                  ).innerHTML = `<div class="order__confirmation">
           <div class="order__text-box">
             <p class="order__text">Bravo, ${orderConfirmation.contact.firstName} ${orderConfirmation.contact.lastName}, votre commande n° ${orderConfirmation.orderId} est validée ! </p></br>
             <p class="order__text">Restez dans votre cannapé, la commande composée de : ${productsArray} pour un montant de ${totalOfLocalStoragePrice} vous sera livrée trés rapidement. </p></br>
@@ -147,15 +139,35 @@ if (storedProducts === null || storedProducts == 0) {
                   class="btn__article"
                   id="btn__order"
                   type="submit"
-                  value="Revenir à la page principale"
+                  value="Revenir"
                 /></a>
               </form>
           </div>
         </div>`;
+                }
+              })
+          );
+        } else {
+          document.getElementById(
+            "orderDisplay"
+          ).innerHTML = `<div id="server__error"><p>Oupss !!! </br>
+    Quelque chose s'est mal passé !</br>Veuillez verifier votre connection internet...</br>
+    Ou verifier que le formulaire de commande est dûment rempli...</p>
+     <form>
+             <a href="index.html">
+            <input
+                  class="btn__article"
+                  id="btn__order"
+                  type="submit"
+                  value="Revenir"
+                /></a>
+              </form>
+              </div> `;
         }
       });
   });
 }
+
 //-------------------------------reg ex
 let form = document.getElementById("form__order");
 

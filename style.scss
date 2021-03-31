@@ -10,6 +10,11 @@
 $primaire: #f8ecf4;
 $secondaire: rgb(207, 191, 191);
 $tertiaire: purple;
+
+a {
+  text-decoration: none;
+  color: black;
+}
 /* -----header & footer -------- */
 .header__style,
 .footer__style {
@@ -45,8 +50,6 @@ $tertiaire: purple;
   width: 250px;
   height: 80px;
   margin: auto 0 auto 15px;
-}
-.logo__box-display {
   display: flex;
   background-color: $primaire;
 }
@@ -61,10 +64,9 @@ $tertiaire: purple;
 .brand__font {
   font-family: fh_faith;
   font-size: 35px;
-}
-.brand__font-style {
   margin: auto;
 }
+
 .signature__style {
   margin: 80px auto;
   font-size: 16px;
@@ -261,6 +263,7 @@ figure {
 }
 .cart__box {
   background-color: white;
+  height: 200px;
   padding: 0 15px;
   margin: 15px auto;
   border-radius: 40px;
@@ -269,14 +272,17 @@ figure {
 .cart__img {
   margin: 10px auto;
   padding: 10px;
-  width: 80px;
-  height: 60px;
+  width: 110px;
+  height: 110px;
   border-radius: 40px;
   box-shadow: lightgrey 10px 10px 10px;
 }
-.cart__description {
-  margin: 10px;
+.cart__name {
+  margin: 0 10px 20px 10px;
 }
+/* .cart__description {
+  margin: 10px;
+} */
 .btn__remove-style {
   height: 30px;
   width: 40px;
@@ -330,4 +336,17 @@ figure {
 }
 .text__false {
   color: red;
+}
+//-------------------server connection error
+#server__error {
+  background-color: $primaire;
+  min-width: 300px;
+  height: 300px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 auto 20px auto;
+  padding-top: 40px;
+  border-radius: 40px;
+  box-shadow: lightgrey 10px 10px 10px;
 }

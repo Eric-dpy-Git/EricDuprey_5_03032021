@@ -15,17 +15,17 @@
   <body>
     <div id="main__page-wrapper">
       <header class="header__style header__display header__color">
-        <div class="logo__box-style logo__box-display">
+        <div class="logo__box-style">
           <div class="logo__img-style">
-            <img
+            <a href="index.html"><img
               width="50"
               height="45"
               class="logo"
               src="front-end/images/logo.jpg"
               alt="logo Orinoco représenté par un caddie"
-            />
+            /></a>
           </div>
-          <span class="brand__font brand__font-style">Orinoco</span>
+          <a href="index.html"class="brand__font">Orinoco</a>
         </div>
         <div class="fa__box">
           <a href="index.html" class="fa__box-a"
@@ -50,12 +50,12 @@
           <article id="cart__price" class="cart__price-style">
             <div class="empty__cartBtn-and-total__textBox">
              <form>
-                <input
+                <button
                   class="btn__article"
                   id="btn__clearCart"
                   type="submit"
                   value="Vider tout le panier"
-                />
+                ><i class="fas fa-trash-alt"></i> Vider le panier</button>
               </form>
             <h2>Total de votre commande</h2>
             <span id="totalPrice__cartDisplay"></span>
