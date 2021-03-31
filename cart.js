@@ -36,7 +36,7 @@ if (storedProducts === null || storedProducts == 0) {
     //insert Html with variables inside tags
     showCart += `<div class="cart__box"><div><img class="cart__img" src="${
       i.productImage
-    }"></img></div><div class="cart__name">${i.productName} - ${
+    }"></img></div><div class="cart__name">1X ${i.productName} - ${
       i.productLense
     } - ${(number = formatter.format(
       number / 100
@@ -139,7 +139,7 @@ if (storedProducts === null || storedProducts == 0) {
           ).innerHTML = `<div class="order__confirmation">
           <div class="order__text-box">
             <p class="order__text">Bravo, ${orderConfirmation.contact.firstName} ${orderConfirmation.contact.lastName}, votre commande n° ${orderConfirmation.orderId} est validée ! </p></br>
-            <p class="order__text">Restez dans votre cannapé, la commande : ${productsArray} pour un montant de ${totalOfLocalStoragePrice} vous sera livré trés rapidement. </p></br>
+            <p class="order__text">Restez dans votre cannapé, la commande composée de : ${productsArray} pour un montant de ${totalOfLocalStoragePrice} vous sera livrée trés rapidement. </p></br>
             <p class="order__text">À bientôt sur Orinoco</p></br>
             <form>
              <a href="index.html">
@@ -177,6 +177,7 @@ const validFirstname = function (inputFirstname) {
     small.innerHTML = "prénom non valide";
     small.classList.remove("text__true");
     small.classList.add("text__false");
+    alert("Inserez un prénom valide");
   }
 };
 
@@ -198,6 +199,7 @@ const validLastname = function (inputLastname) {
     small.innerHTML = "nom non valide";
     small.classList.remove("text__true");
     small.classList.add("text__false");
+    alert("Inserez un nom valide");
   }
 };
 
@@ -207,7 +209,9 @@ form.address.addEventListener("change", function () {
 });
 //address validation-------------------------------------------------
 const validAddress = function (inputAddress) {
-  let addressRegExp = new RegExp("");
+  let addressRegExp = new RegExp(
+    "[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)+"
+  );
   //get emplacement small tag
   let small = document.getElementById("address__message");
   //if test is true
@@ -219,6 +223,29 @@ const validAddress = function (inputAddress) {
     small.innerHTML = "adresse non valide";
     small.classList.remove("text__true");
     small.classList.add("text__false");
+    alert("Inserez une adresse valide");
+  }
+};
+
+//listen city modification---------------------------------------
+form.city.addEventListener("change", function () {
+  validCity(this);
+});
+//city validation-------------------------------------------------
+const validCity = function (inputCity) {
+  let cityRegExp = new RegExp("^[a-z]+[ -']?[[a-z]+[ -']?]*[a-z]+$", "gi");
+  //get emplacement small tag
+  let small = document.getElementById("city__message");
+  //if test is true
+  if (cityRegExp.test(inputCity.value)) {
+    small.innerHTML = "Ville valide";
+    small.classList.remove("text__false");
+    small.classList.add("text__true");
+  } else {
+    small.innerHTML = "Ville non valide";
+    small.classList.remove("text__true");
+    small.classList.add("text__false");
+    alert("Inserez une ville valide");
   }
 };
 
@@ -245,5 +272,6 @@ const validEmail = function (inputEmail) {
     small.innerHTML = "email non valide";
     small.classList.remove("text__true");
     small.classList.add("text__false");
+    alert("Inserez un mail valide");
   }
 };

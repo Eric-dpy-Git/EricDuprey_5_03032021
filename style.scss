@@ -14,7 +14,7 @@ $tertiaire: purple;
 .header__style,
 .footer__style {
   min-width: 320px;
-  height: 200px;
+  height: 250px;
 }
 .header__display,
 .footer__display {
@@ -84,7 +84,7 @@ $tertiaire: purple;
   background-image: url(front-end/images/background__img.jpg);
   background-repeat: round;
   min-width: 320px;
-  min-height: 800px;
+  min-height: 500px;
 }
 
 /* --------section part-------- */
@@ -125,7 +125,7 @@ $tertiaire: purple;
   flex-wrap: wrap;
   min-width: 250px;
   max-width: 1024px;
-  min-height: 550px;
+  min-height: 350px;
   margin: 25px auto;
   border-radius: 15px;
   box-shadow: 10px 10px 10px lightgrey;
@@ -261,6 +261,7 @@ figure {
 }
 .cart__box {
   background-color: white;
+  padding: 0 15px;
   margin: 15px auto;
   border-radius: 40px;
   box-shadow: lightgrey 10px 10px 10px;
