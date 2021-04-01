@@ -8,6 +8,25 @@
   src: url(/front-end/Fonts/HomemadeApple-Regular.ttf);
 }
 
+/* -------------------------------- Main --------------------------------- */
+/* ------- main part --------- */
+#main__page-wrapper {
+  min-width: 320px;
+}
+
+#main,
+.main__product-style {
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  min-width: 320px;
+}
+
+.main__color {
+  background-image: url(front-end/images/background__img.jpg);
+  background-repeat: round;
+  min-width: 320px;
+  min-height: 500px;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -18,10 +37,6 @@ a {
 .footer__style {
   min-width: 320px;
   height: 250px;
-}
-
-.header__display,
-.footer__display {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,8 +51,6 @@ a {
 
 .fa__box {
   margin: auto 0 auto 10px;
-  /* font-size: 30px;
-  color: $tertiaire; */
 }
 
 .fa__box-a {
@@ -46,12 +59,6 @@ a {
   font-size: 30px;
 }
 
-/* .fa-arrow-circle-left,
-.fa-cart-arrow-down {
-  color: $tertiaire;
-  margin: auto 0 auto 10px;
-  font-size: 30px;
-} */
 .logo__box-style {
   width: 250px;
   height: 80px;
@@ -82,24 +89,6 @@ a {
   margin: 80px auto;
   font-size: 16px;
   font-family: HomemadeApple-Regular;
-}
-
-/* ------- main part --------- */
-#main__page-wrapper {
-  min-width: 320px;
-}
-
-#main,
-.main__product-style {
-  font-family: Avenir, Arial, Helvetica, sans-serif;
-  min-width: 320px;
-}
-
-.main__color {
-  background-image: url(front-end/images/background__img.jpg);
-  background-repeat: round;
-  min-width: 320px;
-  min-height: 500px;
 }
 
 /* --------section part-------- */
@@ -138,7 +127,6 @@ a {
   padding: 20px;
 }
 
-/* --------aside part --------- */
 /* --------article part --------- */
 .article__style {
   display: -webkit-box;
@@ -208,8 +196,7 @@ figure {
   padding: 10px;
 }
 
-/* --------article card---------- */
-/* --------article part --------- */
+/* ------------------ javascript classlist.add-------- */
 .hidden__class {
   width: 0;
   height: 0;
@@ -239,19 +226,6 @@ figure {
 
 .asideDivBtn__style:focus {
   outline: none;
-}
-
-/* -------- java test------  */
-#camera {
-  background-color: lightsalmon;
-}
-
-#camera-description {
-  background-color: lightseagreen;
-}
-
-#h2-camera {
-  font-size: 18px;
 }
 
 /* --------product page-------- */
@@ -338,9 +312,6 @@ figure {
   margin: 0 10px 20px 10px;
 }
 
-/* .cart__description {
-  margin: 10px;
-} */
 .btn__remove-style {
   height: 30px;
   width: 40px;
@@ -382,6 +353,7 @@ figure {
   border-radius: 40px;
 }
 
+/* ------------------Order confirmation message -------------------- */
 .order__confirmation {
   background-color: #f8ecf4;
   min-height: 400px;
@@ -400,6 +372,7 @@ figure {
   background-color: #f8ecf4;
 }
 
+/* --------------------regex------------------------- */
 .text__true {
   color: green;
 }
@@ -408,6 +381,7 @@ figure {
   color: red;
 }
 
+/* --------------------------server connection error-------------------*/
 #server__error {
   background-color: #f8ecf4;
   min-width: 300px;

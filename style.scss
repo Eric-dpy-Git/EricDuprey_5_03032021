@@ -6,11 +6,26 @@
   font-family: HomemadeApple-Regular;
   src: url(/front-end/Fonts/HomemadeApple-Regular.ttf);
 }
-
+/* -------------------------------- Main --------------------------------- */
 $primaire: #f8ecf4;
 $secondaire: rgb(207, 191, 191);
 $tertiaire: purple;
+/* ------- main part --------- */
 
+#main__page-wrapper {
+  min-width: 320px;
+}
+#main,
+.main__product-style {
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  min-width: 320px;
+}
+.main__color {
+  background-image: url(front-end/images/background__img.jpg);
+  background-repeat: round;
+  min-width: 320px;
+  min-height: 500px;
+}
 a {
   text-decoration: none;
   color: black;
@@ -20,9 +35,6 @@ a {
 .footer__style {
   min-width: 320px;
   height: 250px;
-}
-.header__display,
-.footer__display {
   display: flex;
   justify-content: space-around;
 }
@@ -32,20 +44,12 @@ a {
 }
 .fa__box {
   margin: auto 0 auto 10px;
-  /* font-size: 30px;
-  color: $tertiaire; */
 }
 .fa__box-a {
   color: $tertiaire;
   margin: auto 0 auto 10px;
   font-size: 30px;
 }
-/* .fa-arrow-circle-left,
-.fa-cart-arrow-down {
-  color: $tertiaire;
-  margin: auto 0 auto 10px;
-  font-size: 30px;
-} */
 .logo__box-style {
   width: 250px;
   height: 80px;
@@ -66,29 +70,11 @@ a {
   font-size: 35px;
   margin: auto;
 }
-
 .signature__style {
   margin: 80px auto;
   font-size: 16px;
   font-family: HomemadeApple-Regular;
 }
-/* ------- main part --------- */
-
-#main__page-wrapper {
-  min-width: 320px;
-}
-#main,
-.main__product-style {
-  font-family: Avenir, Arial, Helvetica, sans-serif;
-  min-width: 320px;
-}
-.main__color {
-  background-image: url(front-end/images/background__img.jpg);
-  background-repeat: round;
-  min-width: 320px;
-  min-height: 500px;
-}
-
 /* --------section part-------- */
 .section__style {
   margin-top: 50px;
@@ -118,10 +104,7 @@ a {
 .fa-arrow-right {
   padding: 20px;
 }
-
-/* --------aside part --------- */
 /* --------article part --------- */
-
 .article__style {
   display: flex;
   flex-wrap: wrap;
@@ -174,15 +157,13 @@ figure {
 #description-1 {
   padding: 10px;
 }
-/* --------article card---------- */
-/* --------article part --------- */
+/* ------------------ javascript classlist.add-------- */
 //class for hide product list
 .hidden__class {
   width: 0;
   height: 0;
   display: none;
 }
-
 /* -------text & button------- */
 .welcome__text {
   font-family: Avenir, Arial, Helvetica, sans-serif;
@@ -204,22 +185,10 @@ figure {
 .asideDivBtn__style:focus {
   outline: none;
 }
-
-/* -------- java test------  */
-#camera {
-  background-color: lightsalmon;
-}
-#camera-description {
-  background-color: lightseagreen;
-}
-#h2-camera {
-  font-size: 18px;
-}
 /* --------product page-------- */
 .main__product-style {
   text-align: center;
 }
-
 .product__h1-style {
   margin: 20px auto;
 }
@@ -280,9 +249,6 @@ figure {
 .cart__name {
   margin: 0 10px 20px 10px;
 }
-/* .cart__description {
-  margin: 10px;
-} */
 .btn__remove-style {
   height: 30px;
   width: 40px;
@@ -313,7 +279,7 @@ figure {
   border: lightgrey 1px solid;
   border-radius: 40px;
 }
-//------------------------------------------------------
+/* ------------------Order confirmation message -------------------- */
 .order__confirmation {
   background-color: $primaire;
   min-height: 400px;
@@ -330,14 +296,14 @@ figure {
   margin: 30px auto;
   background-color: $primaire;
 }
-//------------------------regex
+/* --------------------regex------------------------- */
 .text__true {
   color: green;
 }
 .text__false {
   color: red;
 }
-//-------------------server connection error
+/* --------------------------server connection error-------------------*/
 #server__error {
   background-color: $primaire;
   min-width: 300px;

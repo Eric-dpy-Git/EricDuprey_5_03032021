@@ -14,18 +14,19 @@
   </head>
   <body>
     <div id="main__page-wrapper">
-      <header class="header__style header__display header__color">
+      <header class="header__style header__color">
         <div class="logo__box-style">
           <div class="logo__img-style">
-            <a href="index.html"><img
-              width="50"
-              height="45"
-              class="logo"
-              src="front-end/images/logo.jpg"
-              alt="logo Orinoco représenté par un caddie"
+            <a href="index.html"
+              ><img
+                width="50"
+                height="45"
+                class="logo"
+                src="front-end/images/logo.jpg"
+                alt="logo Orinoco représenté par un caddie"
             /></a>
           </div>
-          <a href="index.html"class="brand__font">Orinoco</a>
+          <a href="index.html" class="brand__font">Orinoco</a>
         </div>
         <div class="fa__box">
           <a href="index.html" class="fa__box-a"
@@ -37,7 +38,7 @@
         </div>
       </header>
       <main class="main__color main__product-style" id="orderDisplay">
-        <img id="testImage"></img>
+        <!--  <img id="testImage" alt="Image du produit sélectionné" src="#"> -->
         <h1 class="product__h1-style">Consultez et validez votre panier</h1>
 
         <section id="product__section" class="product__section-style">
@@ -45,57 +46,90 @@
             id="product__article"
             class="product__article-style article__cart"
           >
-          <!-- here cart informations with javascript -->
-        </article>
+            <!-- here cart informations with javascript -->
+          </article>
           <article id="cart__price" class="cart__price-style">
             <div class="empty__cartBtn-and-total__textBox">
-             <form>
+              <form>
                 <button
                   class="btn__article"
                   id="btn__clearCart"
                   type="submit"
                   value="Vider tout le panier"
-                ><i class="fas fa-trash-alt"></i> Vider le panier</button>
+                >
+                  <i class="fas fa-trash-alt"></i> Vider le panier
+                </button>
               </form>
-            <h2>Total de votre commande</h2>
-            <span id="totalPrice__cartDisplay"></span>
+              <h2>Total de votre commande</h2>
+              <span id="totalPrice__cartDisplay"></span>
             </div>
-              <!-- here price informations with javascript -->
-            </article>
-          <article id="cart__form" class="cart__form-style"><h2>Envoyez votre commande</h2>
-              <!-- here form informations with javascript -->
-              <form class="form__box-style" id="form__order">
+            <!-- here price informations with javascript -->
+          </article>
+          <article id="cart__form" class="cart__form-style">
+            <h2>Envoyez votre commande</h2>
+            <!-- here form informations with javascript -->
+            <form class="form__box-style" id="form__order">
               <label for="firstname">Prénom :</label>
-              <input type="text" class="form__style" id="firstname" name="firstname" placeholder="Indiquez votre prénom ici..." required></br>
-              <small id="firstname__message"></small></br>
+              <input
+                type="text"
+                class="form__style"
+                id="firstname"
+                name="firstname"
+                placeholder="Votre prénom ici..."
+                required
+              />
+              <small id="firstname__message"></small>
               <label for="lastname">Nom :</label>
-              <input type="text" class="form__style" id="lastname" name="lastname" placeholder="Indiquez votre nom ici..." required></br>
-              <small id="lastname__message"></small></br>
+              <input
+                type="text"
+                class="form__style"
+                id="lastname"
+                name="lastname"
+                placeholder="Votre nom ici..."
+                required
+              />
+              <small id="lastname__message"></small>
               <label for="address">Adresse :</label>
-              <textarea type="text" class="form__style" id="address" name="address" placeholder="Indiquez votre adresse : N° de rue, rue/allée et code postal" required></textarea></br>
-              <small id="address__message"></small></br>
+              <input
+                type="text"
+                class="form__style"
+                id="address"
+                name="address"
+                placeholder="N° de rue, rue/allée et code postal"
+                required
+              />
+              <small id="address__message"></small>
               <label for="city">Ville :</label>
-              <input type="text" class="form__style" id="city" name="city" placeholder="Indiquez votre ville ici..." required></br>
-              <small id="city__message"></small></br>
+              <input
+                type="text"
+                class="form__style"
+                id="city"
+                name="city"
+                placeholder="Votre ville ici..."
+                required
+              />
+              <small id="city__message"></small>
               <label for="email">Mail :</label>
-              <input type="text" class="form__style" id="email" name="email" placeholder="Entrez votre email ici..." required></br>
-              <small id="message"></small></br>
-                <input
-                  class="btn__article"
-                  id="btn__order"
-                  type="submit"
-                  value="Commander"
-                />
-              </form>
-              
-            
-
-             
-                
+              <input
+                type="text"
+                class="form__style"
+                id="email"
+                name="email"
+                placeholder="Votre email ici..."
+                required
+              />
+              <small id="message"></small>
+              <input
+                class="btn__article"
+                id="btn__order"
+                type="submit"
+                value="Commander"
+              />
+            </form>
           </article>
         </section>
       </main>
-      
+
       <footer class="footer__style footer__display footer__color">
         <p class="signature__style">Designed by Éric Duprey</p>
       </footer>

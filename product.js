@@ -65,7 +65,6 @@ fetch(url).then((response) =>
         storedProducts.push(productSet);
         localStorage.setItem("storedProducts", JSON.stringify(storedProducts));
       }
-      console.log(storedProducts);
     });
   })
 );

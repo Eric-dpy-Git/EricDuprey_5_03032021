@@ -6,7 +6,7 @@ let listenBtn = document.getElementsByClassName("asideDivBtn__style"); //variabl
 section.classList.add("hidden__class"); //add the class
 mainColor.classList.add("main__color"); //add the class
 
-//listening to the click of the button defined in the variable
+//listening the click of the button defined in the variable
 listenBtn[0].addEventListener("click", function (event) {
   section.classList.toggle("hidden__class"); //adds the class on the element defined by a variable
   mainColor.classList.toggle("main__color"); //adds the class on the element defined by a variable

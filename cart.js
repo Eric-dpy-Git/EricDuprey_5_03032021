@@ -131,7 +131,7 @@ if (storedProducts === null || storedProducts == 0) {
                   ).innerHTML = `<div class="order__confirmation">
           <div class="order__text-box">
             <p class="order__text">Bravo, ${orderConfirmation.contact.firstName} ${orderConfirmation.contact.lastName}, votre commande n° ${orderConfirmation.orderId} est validée ! </p></br>
-            <p class="order__text">Restez dans votre cannapé, la commande composée de : ${productsArray} pour un montant de ${totalOfLocalStoragePrice} vous sera livrée trés rapidement. </p></br>
+            <p class="order__text">Orinoco© vous remercie pour votre achat, la commande composée de : ${productsArray} pour un montant de ${totalOfLocalStoragePrice} vous sera livrée trés rapidement. </p></br>
             <p class="order__text">À bientôt sur Orinoco</p></br>
             <form>
              <a href="index.html">
@@ -245,7 +245,7 @@ form.city.addEventListener("change", function () {
 });
 //city validation-------------------------------------------------
 const validCity = function (inputCity) {
-  let cityRegExp = new RegExp("^[a-z]+[ -']?[[a-z]+[ -']?]*[a-z]+$", "gi");
+  let cityRegExp = new RegExp("^[a-z]+[ -']?[[a-z]+[ -']?]*[a-z]+[a-z]$", "gi");
   //get emplacement small tag
   let small = document.getElementById("city__message");
   //if test is true
