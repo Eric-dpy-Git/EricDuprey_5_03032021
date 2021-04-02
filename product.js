@@ -26,7 +26,7 @@ fetch(url).then((response) =>
     );
     //------insert the choice of options in a drop-down menu-------------
     //variable to show where to inject html
-    let showOption = `<select>`; //???????????????question????????????????
+    let showOption = `<select>`;
     //iteration loop of the array
     for (let i of data.lenses) {
       //in showOption :  where to inject html & insert the iteration --> the value can be a variable !
