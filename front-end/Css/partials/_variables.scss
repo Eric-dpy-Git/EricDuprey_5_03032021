@@ -1,0 +1,19 @@
+$primaire: #f8ecf4;
+$secondaire: rgb(207, 191, 191);
+$tertiaire: purple;
+$special: rgba(248, 236, 244, 0.7);
+$shadow: lightgrey;
+$infoMessage: brown;
+$noBackground: white;
+$true: green;
+$false: red;
+$link: black;
+
+@font-face {
+  font-family: brandFont;
+  src: url(/front-end/Fonts/fh_faith.otf);
+}
+@font-face {
+  font-family: signatureFont;
+  src: url(/front-end/Fonts/HomemadeApple-Regular.ttf);
+}

@@ -1,0 +1,96 @@
+/* ---------------------cart--------------------- */
+.article__cart {
+  min-width: 300px;
+  justify-content: space-around;
+}
+.empty__cart-font {
+  font-size: 22px;
+  color: $infoMessage;
+  font-weight: bold;
+}
+.cart__box {
+  background-color: $noBackground;
+  height: 200px;
+  padding: 0 15px;
+  margin: 15px auto;
+  border-radius: 40px;
+  box-shadow: $shadow 10px 10px 10px;
+}
+.cart__img {
+  margin: 10px auto;
+  padding: 10px;
+  width: 110px;
+  height: 110px;
+  border-radius: 40px;
+  box-shadow: $shadow 10px 10px 10px;
+}
+.cart__name {
+  margin: 0 10px 20px 10px;
+}
+.btn__remove-style {
+  height: 30px;
+  width: 40px;
+  margin: 0 0 10px 0;
+  border-radius: 40px;
+  box-shadow: $shadow 10px 10px 10px;
+  border: 2px $shadow solid;
+}
+.cart__price-style,
+.cart__form-style {
+  display: flex;
+  flex-direction: column;
+  margin: 15px auto;
+  text-align: center;
+  min-height: 200px;
+  background-color: $noBackground;
+  min-width: 260px;
+  border-radius: 40px;
+  box-shadow: $shadow 10px 10px 10px;
+}
+.form__box-style {
+  margin: 0 auto;
+  width: 300px;
+}
+.form__style {
+  width: 300px;
+  margin: 0 auto;
+  border: $shadow 1px solid;
+  border-radius: 40px;
+}
+/* ------------------Order confirmation message -------------------- */
+.order__confirmation {
+  background-color: $primaire;
+  min-height: 400px;
+  min-width: 300px;
+  text-align: center;
+  margin: 20px auto;
+  border: $shadow 1px solid;
+  border-radius: 40px;
+}
+.order__text-box {
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 30px auto;
+  background-color: $primaire;
+}
+/* --------------------regex------------------------- */
+.text__true {
+  color: $true;
+}
+.text__false {
+  color: $false;
+}
+/* --------------------------server connection error-------------------*/
+#server__error {
+  background-color: $primaire;
+  min-width: 300px;
+  height: 300px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 auto 20px auto;
+  padding-top: 40px;
+  border-radius: 40px;
+  box-shadow: $shadow 10px 10px 10px;
+}

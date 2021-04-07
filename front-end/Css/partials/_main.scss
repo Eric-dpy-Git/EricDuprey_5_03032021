@@ -1,0 +1,137 @@
+/* -------text & button------- */
+.welcome__text {
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  padding: 30px;
+}
+.asideDivBtn__style {
+  width: 200px;
+  height: 50px;
+  margin: 0 10px;
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+}
+.asideDivBtn__color {
+  background-color: $secondaire;
+  border-radius: 40px;
+}
+.asideDivBtn__style:focus {
+  outline: none;
+}
+
+//------main
+
+#main__page-wrapper {
+  min-width: 320px;
+}
+#main,
+.main__product-style {
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  min-width: 320px;
+}
+.main__color {
+  background-image: url(../images/background__img.jpg);
+  background-repeat: round;
+  margin: 0 auto;
+  max-width: 1024px;
+  min-height: 500px;
+}
+a {
+  text-decoration: none;
+  color: $link;
+}
+
+/* --------section part-------- */
+.section__style {
+  margin-top: 50px;
+  min-width: 320px;
+}
+.section__aside {
+  min-width: 320px;
+  margin: 0 auto;
+}
+/* --------aside part --------- */
+.aside__div-display {
+  text-align: center;
+  min-width: 250px;
+  min-height: 200px;
+  margin: 0 auto;
+}
+.aside__color {
+  background-color: $primaire;
+  opacity: 0.7;
+}
+.aside__style {
+  max-width: 1024px;
+  margin: 0 auto;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 10px 10px 10px $shadow;
+}
+.fa-arrow-right {
+  padding: 20px;
+}
+/* --------article part --------- */
+.article__style {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 250px;
+  max-width: 1024px;
+  min-height: 350px;
+  margin: 25px auto;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px $shadow;
+}
+.article__color {
+  background-color: $special;
+}
+.img__box {
+  margin: auto;
+}
+figure {
+  text-align: center;
+}
+.img__1 {
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: $shadow 10px 10px 10px;
+}
+/* --------article card---------- */
+.article__card {
+  text-align: center;
+  background-color: $noBackground;
+  min-width: 300px;
+  max-width: 500px;
+  min-height: 200px;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: $shadow 10px 10px 10px;
+}
+.btn__article {
+  background-color: $secondaire;
+  height: 40px;
+  border-radius: 40px;
+  margin: 10px auto;
+  border: 2px $link solid;
+}
+
+#btn__addToCart:active {
+  transform: scale(1.3);
+}
+.btn__select {
+  margin: 10px;
+}
+.btn__article:focus {
+  outline: none;
+  border: none;
+}
+#description-1 {
+  padding: 10px;
+}
+/* ------------------ javascript classlist.add-------- */
+//class for hide product list
+.hidden__class {
+  width: 0;
+  height: 0;
+  display: none;
+}

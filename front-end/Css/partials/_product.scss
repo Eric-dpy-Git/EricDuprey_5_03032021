@@ -1,0 +1,34 @@
+.main__product-style {
+  text-align: center;
+}
+.product__h1-style {
+  margin: 20px auto;
+}
+.product__section-style {
+  min-width: 310px;
+  max-width: 1240px;
+  border-radius: 40px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  background-color: $primaire;
+  box-shadow: $shadow 10px 10px 10px;
+}
+.product__article-style {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product__text-style {
+  min-width: 260px;
+  max-width: 80%;
+  margin: 8% auto;
+}
+#product__img {
+  width: 310px;
+  min-height: 310px;
+  margin: 8% auto;
+  border-radius: 40px;
+  box-shadow: $shadow 10px 10px 10px;
+}
+.product__description-style {
+  max-width: 400px;
+}

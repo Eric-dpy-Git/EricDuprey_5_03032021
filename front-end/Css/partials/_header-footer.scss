@@ -1,0 +1,42 @@
+/* -----header & footer -------- */
+.header__style,
+.footer__style {
+  min-width: 320px;
+  height: 250px;
+  display: flex;
+  justify-content: space-around;
+  &.header__color,
+  &.footer__color {
+    background-color: $secondaire;
+    .signature__style {
+      margin: 80px auto;
+      font-size: 16px;
+      font-family: signatureFont, Arial, Helvetica, sans-serif;
+    }
+  }
+}
+.fa__box {
+  margin: auto 0 auto 10px;
+  .fa__box-a {
+    color: $tertiaire;
+    margin: auto 0 auto 10px;
+    font-size: 30px;
+  }
+}
+
+.logo__box-style {
+  width: 250px;
+  height: 80px;
+  margin: auto 0 auto 15px;
+  display: flex;
+  background-color: $primaire;
+  .logo {
+    margin: 15px;
+  }
+}
+
+.brand__font {
+  font-family: brandFont, Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  margin: auto;
+}

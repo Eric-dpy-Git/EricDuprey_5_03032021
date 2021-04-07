@@ -14,15 +14,16 @@ listenBtn[0].addEventListener("click", function (event) {
 
 let url = "http://localhost:3000/api/cameras"; //creation of a server address variable
 //fetch then transform the response into json
-fetch(url).then((response) => {
-  if (response.ok) {
-    response.json().then((data) => {
-      //variable to display the results
-      let display = '<div id="article__box">';
-      //i = iteration of data
-      for (let i of data) {
-        //content of display
-        display += `<article
+fetch(url)
+  .then((response) => {
+    if (response.ok) {
+      response.json().then((data) => {
+        //variable to display the results
+        let display = '<div id="article__box">';
+        //i = iteration of data
+        for (let i of data) {
+          //content of display
+          display += `<article
             class="article__style article__display article__color" >
             <div class="img__box">
               <figure>
@@ -38,14 +39,15 @@ fetch(url).then((response) => {
             </div>
             </article>
             `;
-      }
-      display += "</div>"; //end of display div
-      document.getElementById("section-2").innerHTML = display; //display html elements into Dom with id
-    });
-  } else {
-    document.getElementById(
-      "section-2"
-    ).innerHTML = `<div id="server__error"><p>Oupss !!! </br>
+        }
+        display += "</div>"; //end of display div
+        document.getElementById("section-2").innerHTML = display; //display html elements into Dom with id
+      });
+    } else {
+      document.getElementById(
+        "section-2"
+      ).innerHTML = `<div id="server__error"><p>Oupss !!! </br>
     Quelque chose c'est mal passé !</br>Veuillez verifier votre connection internet...</p></div> `;
-  }
-});
+    }
+  })
+  .catch((e) => alert("Le serveur n'est pas accessible"));

@@ -4,7 +4,6 @@
 let storedProducts = JSON.parse(localStorage.getItem("storedProducts"));
 //get emplacement for inject local storage informations
 let cartProductPlace = document.getElementById("product__article");
-
 //---------------------------------get cart data------------------------------------------
 
 // const format divised price in euro
@@ -36,23 +35,6 @@ if (storedProducts === null || storedProducts == 0) {
     } - ${(number = formatter.format(number / 100))}</div></div>`;
     cartProductPlace.innerHTML = showCart; //say where to do insert
   }
-  //remove one cart product------------------------------------------- not working
-  let removeBtn = document.getElementsByClassName("btn__remove");
-  //loop to get index of products list
-  for (let j = 0; j < removeBtn.length; j++) {
-    removeBtn[j].addEventListener("click", (event) => {
-      event.preventDefault(); //dont refresh page
-      //variable for the selected id from itération
-      let selectRemoveId = storedProducts[j].productId;
-      //filter action in reverse with "!"
-      storedProducts = storedProducts.filter(
-        (el) => el.productId !== selectRemoveId
-      ); //send into local storage withe stringify
-      localStorage.setItem("storedroducts", JSON.stringify(storedProducts));
-      window.location.href = "cart.html"; //refresh page
-    });
-  }
-  //remove one cart product------------------------------------------- not working
   //clear all cart--------------------------------------------------
   //get the clear cart button
   const btnClearCart = document.getElementById("btn__clearCart");
@@ -104,7 +86,6 @@ if (storedProducts === null || storedProducts == 0) {
       },
       products: cartIdArray,
     };
-
     //post fetch & stringify the elements to server
     let promise01 = fetch("http://localhost:3000/api/cameras/order", {
       method: "POST",
@@ -124,8 +105,8 @@ if (storedProducts === null || storedProducts == 0) {
                 let productList = orderConfirmation.products;
                 let productsArray = [];
                 for (let m = 0; m < productList.length; m++) {
-                  let testing = productList[m].name;
-                  productsArray.push(testing);
+                  let productListName = productList[m].name;
+                  productsArray.push(productListName);
                   document.getElementById(
                     "orderDisplay"
                   ).innerHTML = `<div class="order__confirmation">
@@ -144,6 +125,7 @@ if (storedProducts === null || storedProducts == 0) {
               </form>
           </div>
         </div>`;
+                  console.log(productListName);
                 }
               })
           );
@@ -164,7 +146,8 @@ if (storedProducts === null || storedProducts == 0) {
               </form>
               </div> `;
         }
-      });
+      })
+      .catch((e) => alert("Le serveur n'est pas accessible"));
   });
 }
 
