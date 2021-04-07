@@ -50,4 +50,10 @@ fetch(url)
     Quelque chose c'est mal passé !</br>Veuillez verifier votre connection internet...</p></div> `;
     }
   })
-  .catch((e) => alert("Le serveur n'est pas accessible"));
+  .catch(
+    (e) =>
+      (document.getElementById(
+        "section-2"
+      ).innerHTML = `<div id="server__error"><p>Oupss !!! </br>
+    Quelque chose c'est mal passé !</br>Veuillez verifier la connection au server...</p></div> `)
+  );
